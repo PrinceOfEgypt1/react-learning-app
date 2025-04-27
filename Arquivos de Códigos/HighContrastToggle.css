@@ -1,0 +1,45 @@
+/* src/components/HighContrastToggle.css */
+.high-contrast-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text);
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.high-contrast-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--color-primary);
+}
+
+.high-contrast-toggle svg {
+  flex-shrink: 0;
+}
+
+.toggle-text {
+  display: inline-block;
+}
+
+/* Focus state for accessibility */
+.high-contrast-toggle:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .toggle-text {
+    display: none;
+  }
+  
+  .high-contrast-toggle {
+    padding: var(--spacing-2);
+  }
+}

@@ -1,0 +1,116 @@
+/* src/components/Card.css */
+.card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-6);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 1px solid var(--color-border);
+  height: 100%;
+  min-height: 220px;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--color-primary);
+  opacity: 0.7;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.card-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-3);
+  color: var(--color-text);
+}
+
+.card-subtitle {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-4);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+}
+
+.card-footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.card-link {
+  text-decoration: none;
+}
+
+.card-link[aria-disabled="true"] {
+  pointer-events: none;
+}
+
+.card-button {
+  width: 100%;
+}
+
+.card-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.card-coming-soon {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Popular card styling */
+.card-popular {
+  border-color: var(--color-accent);
+}
+
+.card-popular::before {
+  background: var(--color-accent);
+}
+
+.card-badge {
+  position: absolute;
+  top: var(--spacing-3);
+  right: var(--spacing-3);
+  background-color: var(--color-accent);
+  color: white;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--radius-full);
+  z-index: 1;
+}
+
+/* Focus states for accessibility */
+.card:focus-within {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .card {
+    padding: var(--spacing-4);
+  }
+  
+  .card-title {
+    font-size: var(--font-size-lg);
+  }
+}

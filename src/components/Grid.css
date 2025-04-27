@@ -1,0 +1,222 @@
+/* src/components/Grid.css */
+.grid {
+  display: grid;
+  width: 100%;
+}
+
+/* Grid com número fixo de colunas */
+.grid-cols-1 {
+  grid-template-columns: 1fr;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-cols-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.grid-cols-6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+/* Grid com colunas automáticas */
+.grid-cols-auto-fill {
+  grid-template-columns: repeat(auto-fill, minmax(var(--grid-min-width, 280px), 1fr));
+}
+
+.grid-cols-auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(var(--grid-min-width, 280px), 1fr));
+}
+
+/* Gaps */
+.grid-gap-xs {
+  gap: var(--spacing-2);
+}
+
+.grid-gap-sm {
+  gap: var(--spacing-3);
+}
+
+.grid-gap-md {
+  gap: var(--spacing-4);
+}
+
+.grid-gap-lg {
+  gap: var(--spacing-6);
+}
+
+.grid-gap-xl {
+  gap: var(--spacing-8);
+}
+
+/* Row gaps */
+.grid-row-gap-xs {
+  row-gap: var(--spacing-2);
+}
+
+.grid-row-gap-sm {
+  row-gap: var(--spacing-3);
+}
+
+.grid-row-gap-md {
+  row-gap: var(--spacing-4);
+}
+
+.grid-row-gap-lg {
+  row-gap: var(--spacing-6);
+}
+
+.grid-row-gap-xl {
+  row-gap: var(--spacing-8);
+}
+
+/* Column gaps */
+.grid-col-gap-xs {
+  column-gap: var(--spacing-2);
+}
+
+.grid-col-gap-sm {
+  column-gap: var(--spacing-3);
+}
+
+.grid-col-gap-md {
+  column-gap: var(--spacing-4);
+}
+
+.grid-col-gap-lg {
+  column-gap: var(--spacing-6);
+}
+
+.grid-col-gap-xl {
+  column-gap: var(--spacing-8);
+}
+
+/* Grid item spans */
+.grid-span-1 {
+  grid-column: span 1;
+}
+
+.grid-span-2 {
+  grid-column: span 2;
+}
+
+.grid-span-3 {
+  grid-column: span 3;
+}
+
+.grid-span-4 {
+  grid-column: span 4;
+}
+
+.grid-span-5 {
+  grid-column: span 5;
+}
+
+.grid-span-6 {
+  grid-column: span 6;
+}
+
+.grid-span-full {
+  grid-column: 1 / -1;
+}
+
+/* Responsividade de grid */
+@media (max-width: 1280px) {
+  .grid-cols-6 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .grid-cols-5 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .grid-cols-6, .grid-cols-5, .grid-cols-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  /* Spans em telas grandes */
+  .grid-span-lg-1 {
+    grid-column: span 1;
+  }
+  
+  .grid-span-lg-2 {
+    grid-column: span 2;
+  }
+  
+  .grid-span-lg-3 {
+    grid-column: span 3;
+  }
+  
+  .grid-span-lg-full {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-cols-6, .grid-cols-5, .grid-cols-4, .grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Spans em telas médias */
+  .grid-span-md-1 {
+    grid-column: span 1;
+  }
+  
+  .grid-span-md-2 {
+    grid-column: span 2;
+  }
+  
+  .grid-span-md-full {
+    grid-column: 1 / -1;
+  }
+  
+  /* Ajustes de spans para telas médias */
+  .grid-span-3, .grid-span-4, .grid-span-5, .grid-span-6 {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid-cols-6, .grid-cols-5, .grid-cols-4, .grid-cols-3, .grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Spans em telas pequenas */
+  .grid-span-sm-1 {
+    grid-column: span 1;
+  }
+  
+  .grid-span-sm-full {
+    grid-column: 1 / -1;
+  }
+  
+  /* Todos os spans ficam full em telas pequenas */
+  .grid-span-2, .grid-span-3, .grid-span-4, .grid-span-5, .grid-span-6 {
+    grid-column: 1 / -1;
+  }
+  
+  /* Reduzir gaps em mobile */
+  .grid-gap-lg, .grid-gap-xl {
+    gap: var(--spacing-4);
+  }
+  
+  .grid-row-gap-lg, .grid-row-gap-xl {
+    row-gap: var(--spacing-4);
+  }
+  
+  .grid-col-gap-lg, .grid-col-gap-xl {
+    column-gap: var(--spacing-4);
+  }
+}

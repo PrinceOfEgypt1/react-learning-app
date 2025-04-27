@@ -1,0 +1,118 @@
+/* src/styles/high-contrast.css */
+/* Estilos específicos para modo de alto contraste */
+.high-contrast {
+  /* Aumento do contraste para texto e cores de fundo */
+  --color-text: #000000;
+  --color-text-secondary: #222222;
+  --color-background: #ffffff;
+  --color-surface: #ffffff;
+  --color-border: #000000;
+  
+  /* Cores mais fortes para elementos interativos */
+  --color-primary: #0000ee;
+  --color-secondary: #0000cc;
+  --color-accent: #990099;
+  --color-success: #006600;
+  --color-error: #cc0000;
+  
+  /* Remover gradientes e substituir por cores sólidas para melhor legibilidade */
+  --gradient-hero: var(--color-primary);
+  
+  /* Aumentar espessura de bordas */
+  outline-width: 3px;
+}
+
+/* Modo escuro com alto contraste */
+.high-contrast.dark-mode {
+  --color-text: #ffffff;
+  --color-text-secondary: #eeeeee;
+  --color-background: #000000;
+  --color-surface: #121212;
+  --color-border: #ffffff;
+  
+  --color-primary: #6699ff;
+  --color-secondary: #99ccff;
+  --color-accent: #ff99ff;
+  --color-success: #99ff99;
+  --color-error: #ff6666;
+  
+  --gradient-hero: var(--color-primary);
+}
+
+/* Resetar sombras quando em alto contraste para maior clareza */
+.high-contrast {
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  --shadow-xl: none;
+}
+
+/* Adicionar bordas definidas em vez de sombras sutis */
+.high-contrast .card,
+.high-contrast .hero-card,
+.high-contrast .btn,
+.high-contrast .header,
+.high-contrast .footer,
+.high-contrast details,
+.high-contrast .home-cta,
+.high-contrast .fundamentos-footer,
+.high-contrast .tab-button {
+  border: 2px solid var(--color-border);
+  box-shadow: none;
+}
+
+/* Maior contraste para elementos focados */
+.high-contrast *:focus {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+/* Marcar mais claramente links */
+.high-contrast a {
+  text-decoration: underline;
+  font-weight: var(--font-weight-medium);
+}
+
+/* Botões mais distintos */
+.high-contrast .btn {
+  border-width: 2px;
+}
+
+/* Desativar animações sutis para reduzir distrações */
+.high-contrast * {
+  transition: none !important;
+  animation: none !important;
+}
+
+/* Desabilitar elementos decorativos não essenciais */
+.high-contrast .hero-decoration,
+.high-contrast .card::before,
+.high-contrast .hero-card::before {
+  display: none;
+}
+
+/* Aumentar tamanho do texto em locais críticos */
+.high-contrast .btn,
+.high-contrast nav a,
+.high-contrast input,
+.high-contrast select {
+  font-size: calc(var(--font-size-base) * 1.1);
+}
+
+/* Melhorar contrastes nas abas */
+.high-contrast .tab-button.active {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.high-contrast.dark-mode .tab-button.active {
+  background-color: var(--color-primary);
+  color: black;
+}
+
+/* Evitar transparências que possam diminuir o contraste */
+.high-contrast .card p,
+.high-contrast .home-cta p,
+.high-contrast .hero-description {
+  opacity: 1;
+}
